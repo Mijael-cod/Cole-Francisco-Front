@@ -9,7 +9,7 @@ export default function Carousel() {
             </div>
             <div class="carousel-inner">
                 <div class="carousel-item active">
-                    <img src="src/assets/inicial.jpg" class="d-block w-100" alt="..." />
+                    <img src="src/assets/evento.jpeg" class="d-block w-100" alt="..." />
                 </div>
                 <div class="carousel-item">
                     <img src="src/assets/primaria.jpg" class="d-block w-100" alt="..." />

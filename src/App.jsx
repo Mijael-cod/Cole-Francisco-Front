@@ -3,6 +3,7 @@ import './App.css'
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import { Public } from './routes/public/auth';
 import Home from './pages/public/home/Home';
+import Nosotros from './pages/public/nosotros/Nosotros';
 
 function App() {
   const [count, setCount] = useState(0)
@@ -14,7 +15,7 @@ function App() {
         <Routes>
 
           <Route path={Public.home} element={<Home />} />
-
+          <Route path={Public.nosotros} element={<Nosotros />} /> 
 
         </Routes>
       </Suspense>

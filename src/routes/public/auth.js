@@ -5,4 +5,5 @@ export const Public = {
     authRegister: '/public/auth/register',
     authForgotPassword: '/public/auth/forgot-password',
     authResetPassword: '/public/auth/reset-password',
+    nosotros: '/public/nosotros',
 };

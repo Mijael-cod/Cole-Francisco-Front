@@ -1,7 +1,9 @@
+import Navbar from "../../../shared/navbar/public/Navbar";
+
 export default function Home() {
   return (
-    // <Navbar />
     <div>
+        <Navbar />
         <h1>Estas en home</h1>
     </div>
   )

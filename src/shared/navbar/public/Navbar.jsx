@@ -5,9 +5,9 @@ function ModernNavbar() {
     return (
         <nav className='navbar-color'>
             <div class="container">
-                <header class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3">
+                <header class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-1 mb-1">
                     <a href="/" class="d-flex align-items-center col-md-3 mb-2 mb-md-0 text-dark text-decoration-none">
-                        <img className='img-fluid' src="src/assets/escudo_colegio.png" alt="" style={{ width: '90px', height: 'auto' }} />
+                        <img className='img-fluid' src="src/assets/escudo_colegio.png" alt="" style={{ width: '80px', height: 'auto' }} />
                         <span className="ms-2 text-white">Colegio Francisco Bolognesi</span>
                     </a>
 

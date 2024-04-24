@@ -2,7 +2,7 @@ import Navbar from "../../../shared/navbar/public/Navbar";
 
 export default function Home() {
   return (
-    <div className="container-fluid ">
+    <div className="">
         <Navbar />
         <div className="flex-grow-1">
             <div className="container">

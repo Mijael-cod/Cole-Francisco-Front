@@ -1,24 +1,19 @@
 import Navbar from "../../../shared/navbar/public/Navbar";
-import Carousel from "./components/Carousel";
-
+import Carousel from "../../../shared/navbar/public/Carrousel";
 export default function Home() {
   return (
-    <div className="">
+    <div className="d-flex flex-column min-vh-100">
         <Navbar />
-<<<<<<< HEAD
-        <h1>Estas en home</h1>
-        <Carousel />
-=======
-        <div className="flex-grow-1">
+        <Carousel /> 
+        <div className="flex-grow-1 d-flex justify-content-center align-items-center">
             <div className="container">
-                <div className="row justify-content-center align-items-center">
-                    <div className="col container-fluid">
+                <div className="row">
+                    <div className="col">
                         <h1 className="text-center">Estás en Home</h1>
                     </div>
                 </div>
             </div>
         </div>
->>>>>>> d69094106a40104757922afebc5284a2e9cb36a2
     </div>
-  )
+  );
 }

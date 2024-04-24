@@ -1,6 +1,5 @@
 import { Suspense, useState } from 'react'
 import './App.css'
-import 'bootstrap/dist/css/bootstrap.min.css';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import { Public } from './routes/public/auth';
 import Home from './pages/public/home/Home';

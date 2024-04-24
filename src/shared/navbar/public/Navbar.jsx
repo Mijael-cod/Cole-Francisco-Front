@@ -3,40 +3,26 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 
 function ModernNavbar() {
     return (
-        <nav className="navbar navbar-expand-lg container-fluid navbar-dark bg-dark">
-            <div className="container-fluid">
-                <a className="navbar-brand" href="#">Navbar</a>
-                <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                    <span className="navbar-toggler-icon"></span>
-                </button>
-                <div className="collapse navbar-collapse" id="navbarSupportedContent">
-                    <ul className="navbar-nav me-auto mb-2 mb-lg-0">
-                        <li className="nav-item">
-                            <a className="nav-link active" aria-current="page" href="#">Home</a>
-                        </li>
-                        <li className="nav-item">
-                            <a className="nav-link" href="#">Link</a>
-                        </li>
-                        <li className="nav-item dropdown">
-                            <a className="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                Dropdown
-                            </a>
-                            <ul className="dropdown-menu">
-                                <li><a className="dropdown-item" href="#">Action</a></li>
-                                <li><a className="dropdown-item" href="#">Another action</a></li>
-                                <li><hr className="dropdown-divider"/></li>
-                                <li><a className="dropdown-item" href="#">Something else here</a></li>
-                            </ul>
-                        </li>
-                        <li className="nav-item">
-                            <a className="nav-link disabled" aria-disabled="true">Disabled</a>
-                        </li>
+        <nav className='navbar-color'>
+            <div class="container">
+                <header class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3">
+                    <a href="/" class="d-flex align-items-center col-md-3 mb-2 mb-md-0 text-dark text-decoration-none">
+                        <img className='img-fluid' src="src/assets/escudo_colegio.png" alt="" style={{ width: '90px', height: 'auto' }} />
+                        <span className="ms-2 text-white">Colegio Francisco Bolognesi</span>
+                    </a>
+
+                    <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
+                        <li><a href="#" class="nav-link px-3 text-white">Inicio</a></li>
+                        <li><a href="#" class="nav-link px-3 text-white">Nosotros</a></li>
+                        <li><a href="#" class="nav-link px-3 text-white">Galeria</a></li>
+                        <li><a href="#" class="nav-link px-3 text-white">Matricula</a></li>
                     </ul>
-                    <form className="d-flex">
-                        <input className="form-control me-2" type="search" placeholder="Search" aria-label="Search"/>
-                        <button className="btn btn-outline-success" type="submit">Search</button>
-                    </form>
-                </div>
+
+                    <div class="col-md-3 text-end">
+                        <button type="button" class="btn btn-outline-secondary me-2 text-white">Iniciar Sesión</button>
+                        {/* <button type="button" class="btn btn-primary">Registrarse</button> */}
+                    </div>
+                </header>
             </div>
         </nav>
     );

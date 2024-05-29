@@ -9,45 +9,26 @@ export default function Matricula() {
         <form>
           <div className="row">
             <div className="col-md-6">
-              <h2>Datos del Apoderado</h2>
-              <div className="mb-3">
-                <label htmlFor="nombreApoderado" className="form-label">Nombre Apoderado</label>
-                <input type="text" className="form-control" id="nombreApoderado" placeholder="Nombre del apoderado" />
-              </div>
-              <div className="mb-3">
-                <label htmlFor="apellidoApoderado" className="form-label">Apellido Paterno</label>
-                <input type="text" className="form-control" id="apellidoApoderado" placeholder="Apellido del apoderado" />
-              </div>
-              <div className="mb-3">
-                <label htmlFor="apellidoApoderado" className="form-label">Apellido Materno</label>
-                <input type="text" className="form-control" id="apellidoApoderado" placeholder="Apellido del apoderado" />
-              </div>
-              <div className="mb-3">
-                <label htmlFor="emailApoderado" className="form-label">DNI</label>
-                <input type="email" className="form-control" id="emailApoderado" placeholder="Email del apoderado" />
-              </div>
-              <div className="mb-3">
-                <label htmlFor="telefonoApoderado" className="form-label">Teléfono</label>
-                <input type="tel" className="form-control" id="telefonoApoderado" placeholder="Celular del apoderado" />
-              </div>
-            </div>
-            <div className="col-md-6">
-              <h2>Datos del Estudiante</h2>
+              <h2>Datos del Alumno</h2>
               <div className="mb-3">
                 <label htmlFor="nombreEstudiante" className="form-label">Nombre</label>
                 <input type="text" className="form-control" id="nombreEstudiante" placeholder="Nombre del estudiante" />
               </div>
               <div className="mb-3">
-                <label htmlFor="nombreEstudiante" className="form-label">Apellido Paterno</label>
-                <input type="text" className="form-control" id="nombreEstudiante" placeholder="Nombre del estudiante" />
+                <label htmlFor="apellidoPaternoEstudiante" className="form-label">Apellido Paterno</label>
+                <input type="text" className="form-control" id="apellidoPaternoEstudiante" placeholder="Apellido paterno del estudiante" />
               </div>
               <div className="mb-3">
-                <label htmlFor="nombreEstudiante" className="form-label">Apellido Materno</label>
-                <input type="text" className="form-control" id="nombreEstudiante" placeholder="Nombre del estudiante" />
+                <label htmlFor="apellidoMaternoEstudiante" className="form-label">Apellido Materno</label>
+                <input type="text" className="form-control" id="apellidoMaternoEstudiante" placeholder="Apellido materno del estudiante" />
               </div>
               <div className="mb-3">
-                <label htmlFor="apellidoEstudiante" className="form-label">Sexo</label>
-                <input type="text" className="form-control" id="apellidoEstudiante" placeholder="Apellido del estudiante" />
+                <label htmlFor="sexoEstudiante" className="form-label">Sexo</label>
+                <select className="form-select" id="sexoEstudiante">
+                  <option value="">Selecciona un sexo</option>
+                  <option value="sexoEstudiante1">Masculino</option>
+                  <option value="sexoEstudiante2">Femenino</option>
+                </select>
               </div>
               <div className="mb-3">
                 <label htmlFor="curso" className="form-label">Curso</label>
@@ -58,11 +39,35 @@ export default function Matricula() {
                   <option value="curso3">Curso 3</option>
                 </select>
               </div>
+              <div className="mb-3">
+                <label htmlFor="numeroPadre" className="form-label">Número Celular del Apoderado</label>
+                <input type="tel" className="form-control" id="numeroPadre" placeholder="Número del apoderado" />
+              </div>
+              <div className="mb-3">
+                <label htmlFor="dniArchivo" className="form-label">Adjuntar DNI</label>
+                <input type="file" className="form-control" id="dniArchivo" />
+              </div>
+              <div className="mb-3">
+                <label htmlFor="boletaNotasArchivo" className="form-label">Adjuntar Boleta de Notas</label>
+                <input type="file" className="form-control" id="boletaNotasArchivo" />
+              </div>
+            </div>
+            <div className="col-md-6">
+              <h2>Credenciales para Iniciar el Sistema</h2>
+              <div className="mb-3">
+                <label htmlFor="username" className="form-label">Nombre de Usuario</label>
+                <input type="text" className="form-control" id="username" placeholder="Nombre de usuario" />
+              </div>
+              <div className="mb-3">
+                <label htmlFor="password" className="form-label">Contraseña</label>
+                <input type="password" className="form-control" id="password" placeholder="Contraseña" />
+              </div>
             </div>
           </div>
-          <div class="d-grid gap-2 mt-5">
-            <button class="btn btn-primary" type="button">Enviar</button>
+          <div className="d-grid gap-2 mt-5">
+            <button className="btn btn-primary" type="button">Enviar</button>
           </div>
+          <br />
         </form>
       </div>
     </div>

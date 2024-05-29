@@ -17,7 +17,7 @@ function ModernNavbar() {
                         {/* <li><a href="#" class="nav-link px-3 text-white">Inicio</a></li> */}
                         {/* <li><Link to='/public/nosotros' class="nav-link px-3 text-white">Nosotros</Link></li> */}
                         {/* <li><a href="#" class="nav-link px-3 text-white">Galeria</a></li> */}
-                        <li><Link to='/public/matricula' class="nav-link px-3 text-white">Matricula </Link></li>
+                        <li><Link to='/public/matricula' class="nav-link px-3 text-white">Admisión </Link></li>
                     </ul>
 
                     <div className="col-md-3 text-end">

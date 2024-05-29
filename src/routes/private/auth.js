@@ -5,4 +5,5 @@ export const Private = {
     authRegister: '/private/auth/register',
     authForgotPassword: '/private/auth/forgot-password',
     authResetPassword: '/private/auth/reset-password',
+    dashboard: '/private/admin/dashboard'
 };

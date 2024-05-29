@@ -6,4 +6,5 @@ export const Public = {
     authForgotPassword: '/public/auth/forgot-password',
     authResetPassword: '/public/auth/reset-password',
     nosotros: '/public/nosotros',
+    matricula: '/public/matricula'
 };

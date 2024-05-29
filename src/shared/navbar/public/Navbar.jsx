@@ -15,14 +15,15 @@ function ModernNavbar() {
                     <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
                         <li><Link to='/' class="nav-link px-3 text-white">Inicio</Link></li>
                         {/* <li><a href="#" class="nav-link px-3 text-white">Inicio</a></li> */}
-                        <li><Link to='/public/nosotros' class="nav-link px-3 text-white">Nosotros</Link></li>
-                        <li><a href="#" class="nav-link px-3 text-white">Galeria</a></li>
-                        <li><a href="#" class="nav-link px-3 text-white">Matricula</a></li>
+                        {/* <li><Link to='/public/nosotros' class="nav-link px-3 text-white">Nosotros</Link></li> */}
+                        {/* <li><a href="#" class="nav-link px-3 text-white">Galeria</a></li> */}
+                        <li><Link to='/public/matricula' class="nav-link px-3 text-white">Matricula </Link></li>
                     </ul>
 
-                    <div class="col-md-3 text-end">
-                        <button type="button" class="btn btn-outline-secondary me-2 text-white">Iniciar Sesión</button>
-                        {/* <button type="button" class="btn btn-primary">Registrarse</button> */}
+                    <div className="col-md-3 text-end">
+                        <Link to='/public/auth/login'>
+                            <button type="button" className="btn btn-outline-secondary me-2 text-white">Iniciar Sesión</button>
+                        </Link>
                     </div>
                 </header>
             </div>

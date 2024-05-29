@@ -1,4 +1,4 @@
-import { Suspense, useState } from 'react'
+import { Suspense, useEffect, useState } from 'react'
 import './App.css'
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import { Public } from './routes/public/auth';
@@ -9,8 +9,21 @@ import Login from './pages/auth/login/Login';
 import { Private } from './routes/private/auth';
 import Dashboard from './pages/private/admin/dashboard/Dashboard';
 
+import axios from 'axios';
+
 function App() {
-  const [count, setCount] = useState(0)
+  const [count, setCount] = useState(0);
+
+  // const [user, setUser] = useState([]);
+
+  // const fetchData =  () => {
+  //   return axios.get('https://jsonplaceholder.typicode.com/posts')
+  //   .then((response) => setUser(response.data));
+  // }
+
+  // useEffect(() => {
+  //   fetchData();
+  // }, [])
 
   return (
 
@@ -23,15 +36,10 @@ function App() {
           <Route path={Public.matricula} element={<Matricula />} />
           <Route path={Public.authLogin} element={<Login />} />
           <Route path={Private.dashboard} element={<Dashboard />} />
-
-
+          
         </Routes>
       </Suspense>
     </BrowserRouter>
-
-    
-
-
   )
 }
 

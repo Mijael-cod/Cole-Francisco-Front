@@ -8,14 +8,14 @@ export default function Carousel() {
                 <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
             </div>
             <div class="carousel-inner">
-                <div class="carousel-item active">
-                    <img src="src/assets/evento.jpeg" class="d-block w-100" alt="..." />
+                <div className="carousel-item active">
+                    <img src="https://i.imgur.com/lxSsFsE.jpeg" className="d-block w-100" alt="Evento" />
                 </div>
                 <div class="carousel-item">
-                    <img src="src/assets/primaria.jpg" class="d-block w-100" alt="..." />
+                    <img src="https://i.imgur.com/DNjOmD7.jpeg" class="d-block w-100" alt="..." />
                 </div>
                 <div class="carousel-item">
-                    <img src="src/assets/secundaria.jpg" class="d-block w-100" alt="..." />
+                    <img src="https://i.imgur.com/0ctCvM9.jpeg" class="d-block w-100" alt="..." />
                 </div>
             </div>
             <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">

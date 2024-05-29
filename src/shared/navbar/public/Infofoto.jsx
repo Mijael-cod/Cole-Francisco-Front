@@ -12,24 +12,24 @@ function ModernNavbar() {
         <div className="row g-5">
         <div className="col position-relative">
     <div className="p-4 rounded-3" style={{ backgroundColor: '#FEBF01', boxShadow: '0 16px 24px rgba(0, 0, 0, 0.4)' }}>
-        <div className="aspect-ratio aspect-ratio-square" style={{ height:'200px', maxHeight: '300px' }}>
-            <img src="src/assets/colegio1.jpeg" alt="Imagen" style={{ height:'90%', maxHeight: '300px' }} className="aspect-ratio-item img-fluid mb-3"/>
+        <div className="aspect-ratio aspect-ratio-square" style={{ height:'240px', maxHeight: '340px' }}>
+            <img src="https://i.imgur.com/zmuW0PO.jpeg" alt="Imagen" style={{ height:'90%', maxHeight: '340px' }} className="aspect-ratio-item img-fluid mb-3"/>
         </div>
         <h5 className="text-dark">INICIAL</h5>
     </div>
     </div>
           <div className="col position-relative">
     <div className="p-4 rounded-3" style={{ backgroundColor: '#57D742', boxShadow: '0 16px 24px rgba(0, 0, 0, 0.4)' }}>
-        <div className="aspect-ratio aspect-ratio-square" style={{ height:'200px', maxHeight: '300px' }}>
-            <img src="src/assets/colegio1.jpeg" alt="Imagen" style={{ height:'90%', maxHeight: '300px' }} className="aspect-ratio-item img-fluid mb-3"/>
+        <div className="aspect-ratio aspect-ratio-square" style={{ height:'240px', maxHeight: '340px' }}>
+            <img src="https://i.imgur.com/wttSwn9.jpeg" alt="Imagen" style={{ height:'90%', maxHeight: '340px' }} className="aspect-ratio-item img-fluid mb-3"/>
         </div>
         <h5 className="text-dark">PRIMARIA</h5>
     </div>
     </div>
           <div className="col position-relative">
     <div className="p-4 rounded-3" style={{ backgroundColor: '#19B5FA', boxShadow: '0 16px 24px rgba(0, 0, 0, 0.4)' }}>
-        <div className="aspect-ratio aspect-ratio-square" style={{ height:'200px', maxHeight: '300px' }}>
-            <img src="src/assets/colegio1.jpeg" alt="Imagen" style={{ height:'90%', maxHeight: '300px' }} className="aspect-ratio-item img-fluid mb-3"/>
+        <div className="aspect-ratio aspect-ratio-square" style={{ height:'240px', maxHeight: '340px' }}>
+            <img src="https://i.imgur.com/B7PCOj0.jpeg" alt="Imagen" style={{ height:'90%', maxHeight: '340px' }} className="aspect-ratio-item img-fluid mb-3"/>
         </div>
         <h5 className="text-dark text-">SECUNDARIA</h5>
     </div>

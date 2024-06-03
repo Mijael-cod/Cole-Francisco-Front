@@ -20,7 +20,7 @@ export default function Login() {
                 <input type="password" className="form-control" id="password" placeholder="Ingresa tu contraseña" />
               </div>
               <div className="d-grid">
-                <Link to="/private/admin/dashboard" className="btn btn-primary">Iniciar Sesión</Link>
+                <Link to="/private/admin/dashboard" className="btn btn-primary" id="loginButton">Iniciar Sesión</Link>
               </div>
             </form>
             <div className="text-center mt-3">

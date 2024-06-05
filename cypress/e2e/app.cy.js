@@ -10,12 +10,12 @@ describe("App", () => {
         cy.get('nav').contains('Inicio');
         cy.get('nav').contains('Nosotros');
         cy.get('nav').contains('Galeria');
-        cy.get('nav').contains('Admisión');
+        cy.get('nav').contains('Matricula');
         cy.get('nav').contains('Iniciar Sesión');
     });
 
-    it("should navigate to the Admisión page when clicking on the corresponding link", () => {
-        cy.get('nav').contains('Admisión').click();
+    it("should navigate to the Matricula page when clicking on the corresponding link", () => {
+        cy.get('nav').contains('Matricula').click();
         cy.url().should('include', Public.matricula);
     });
 

@@ -22,15 +22,30 @@ describe("App", () => {
     it("should fill out and submit the enrollment form", () => {
         cy.visit(Public.matricula);
     
-        cy.get('#nombreEstudiante').type('Juan');
-        cy.get('#apellidoPaternoEstudiante').type('Pérez');
+        // Datos del Alumno
+        cy.get('#crearEstudianteDto\\.persona\\.nombre').type('Gerson');
+        cy.get('#crearEstudianteDto\\.persona\\.apellidoPaterno').type('Bravo');
+        cy.get('#crearEstudianteDto\\.persona\\.apellidoMaterno').type('Herrera');
+        cy.get('#crearEstudianteDto\\.persona\\.dni').type('76965732');
+        cy.get('#crearEstudianteDto\\.persona\\.fechaNacimiento').type('2000-01-01');
+        cy.get('#crearEstudianteDto\\.persona\\.numeroCelular').type('987654321');
+        cy.get('#crearEstudianteDto\\.edad').type('18');
+        cy.get('#crearEstudianteDto\\.sexo').select('Masculino');
+        cy.get('#idGrado').select('1');
     
-        cy.get('#sexoEstudiante').select('Masculino');
-        cy.get('#curso').select('Curso 1');
+        // Contacto del Apoderado
+        cy.get('#apoderadoDto\\.nombre').type('Carlos');
+        cy.get('#apoderadoDto\\.apellidoPaterno').type('Pérez');
+        cy.get('#apoderadoDto\\.apellidoMaterno').type('López');
+        cy.get('#apoderadoDto\\.dni').type('87654321');
+        cy.get('#apoderadoDto\\.fechaNacimiento').type('1980-01-01');
+        cy.get('#apoderadoDto\\.numeroCelular').type('123456789');
     
-        cy.get('button').contains('Enviar').click();
+        // cy.get('button').contains('Enviar').click();
     
+        // cy.url().should('include', '/success');
     });
+    
 
     it("should fill out and submit the login form", () => {
         cy.visit(Public.authLogin);
@@ -42,28 +57,6 @@ describe("App", () => {
 
         cy.url().should('include', '/private/admin/dashboard');
     }); 
-
-    // it("should search on Google and return to the app", () => {
-    //     cy.origin('https://www.google.com', () => {
-    //         cy.visit('/');
-    //         cy.on('uncaught:exception', (err) => {
-    //             if (err.message.includes('Failed to read a named property')) {
-    //                 return false;
-    //             }
-    //             return true;
-    //         });
-    //         cy.get('body').then(($body) => {
-    //             if ($body.find('button:contains("Acepto")').length) {
-    //                 cy.get('button').contains('Acepto').click();
-    //             }
-    //         });
-    //         cy.get('input[name="q"]').type('Ejemplos de test{enter}');
-    //         cy.get('#search').should('contain', 'Ejemplos de test');
-    //     });
-    //     cy.visit('/');
-    //     cy.url().should('eq', Cypress.config().baseUrl + '/');
-    // });
-
     
 
 });

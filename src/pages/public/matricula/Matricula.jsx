@@ -3,74 +3,58 @@ import Navbar from "../../../shared/navbar/public/Navbar";
 
 export default function Matricula() {
   const [formValues, setFormValues] = useState({
-    documentoCrearDto: {
-      urlConstancia: '',
-      urlLibreta: '',
-      urlCopiaDni: ''
-    },
-    apoderadoDto: {
-      nombre: '',
-      apellidoPaterno: '',
-      apellidoMaterno: '',
-      dni: '',
-      fechaNacimiento: '',
-      numeroCelular: ''
-    },
-    crearEstudianteDto: {
-      persona: {
-        nombre: '',
-        apellidoPaterno: '',
-        apellidoMaterno: '',
-        dni: '',
-        fechaNacimiento: '',
-        numeroCelular: ''
-      },
-      edad: '',
-      sexo: ''
-    },
+    urlCopiaDni: '',
+    urlConstancia: '',
+    urlLibreta: '',
+    nombreApoderado: '',
+    apellidoPaternoApoderado: '',
+    apellidoMaternoApoderado: '',
+    dniApoderado: '',
+    fechaNacimientoApoderado: '',
+    numeroCelularApoderado: '',
+    edadEstudiante: '',
+    sexoEstudiante: '',
+    nombreEstudiante: '',
+    apellidoPaternoEstudiante: '',
+    apellidoMaternoEstudiante: '',
+    dniEstudiante: '',
+    fechaNacimientoEstudiante: '',
+    numeroCelularEstudiante: '',
     idGrado: ''
   });
 
   const handleInputChange = (e) => {
     const { id, value } = e.target;
-    const [parentKey, childKey] = id.split('.');
-    if (childKey) {
-      setFormValues(prevState => ({
-        ...prevState,
-        [parentKey]: {
-          ...prevState[parentKey],
-          [childKey]: value
-        }
-      }));
-    } else {
-      setFormValues(prevState => ({
-        ...prevState,
-        [id]: value
-      }));
-    }
+    setFormValues(prevState => ({
+      ...prevState,
+      [id]: value
+    }));
   };
 
   const handleFileChange = (e) => {
     const { id, files } = e.target;
-    const [parentKey, childKey] = id.split('.');
-    if (childKey) {
-      setFormValues(prevState => ({
-        ...prevState,
-        [parentKey]: {
-          ...prevState[parentKey],
-          [childKey]: files[0] ? files[0].name : ''
-        }
-      }));
-    }
+    setFormValues(prevState => ({
+      ...prevState,
+      [id]: files[0] ? files[0].name : ''
+    }));
   };
 
   const handleSubmit = async () => {
     console.log('Submitting form...');
+    
+    // Verificar que todos los campos estén llenos
+    for (const [key, value] of Object.entries(formValues)) {
+      if (!value) {
+        alert(`Por favor, completa el campo: ${key}`);
+        return;
+      }
+    }
+
     const data = { ...formValues };
     console.log('Form Data:', data);
 
     try {
-      const response = await fetch('https://testing-colegio-5.onrender.com/api/matriculas', {
+      const response = await fetch('http://localhost:8080/api/matriculas/crear', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
@@ -101,45 +85,45 @@ export default function Matricula() {
             <div className="col-md-6">
               <h2>Datos del Alumno</h2>
               <div className="mb-3">
-                <label htmlFor="crearEstudianteDto.persona.nombre" className="form-label">Nombre</label>
-                <input type="text" className="form-control" id="crearEstudianteDto.persona.nombre" placeholder="Nombre del estudiante" value={formValues.crearEstudianteDto.persona.nombre} onChange={handleInputChange} />
+                <label htmlFor="nombreEstudiante" className="form-label">Nombre</label>
+                <input type="text" className="form-control" id="nombreEstudiante" placeholder="Nombre del estudiante" value={formValues.nombreEstudiante} onChange={handleInputChange} />
               </div>
               <div className="row">
                 <div className="col-md-6 mb-3">
-                  <label htmlFor="crearEstudianteDto.persona.apellidoPaterno" className="form-label">Apellido Paterno</label>
-                  <input type="text" className="form-control" id="crearEstudianteDto.persona.apellidoPaterno" placeholder="Apellido paterno del estudiante" value={formValues.crearEstudianteDto.persona.apellidoPaterno} onChange={handleInputChange} />
+                  <label htmlFor="apellidoPaternoEstudiante" className="form-label">Apellido Paterno</label>
+                  <input type="text" className="form-control" id="apellidoPaternoEstudiante" placeholder="Apellido paterno del estudiante" value={formValues.apellidoPaternoEstudiante} onChange={handleInputChange} />
                 </div>
                 <div className="col-md-6 mb-3">
-                  <label htmlFor="crearEstudianteDto.persona.apellidoMaterno" className="form-label">Apellido Materno</label>
-                  <input type="text" className="form-control" id="crearEstudianteDto.persona.apellidoMaterno" placeholder="Apellido materno del estudiante" value={formValues.crearEstudianteDto.persona.apellidoMaterno} onChange={handleInputChange} />
+                  <label htmlFor="apellidoMaternoEstudiante" className="form-label">Apellido Materno</label>
+                  <input type="text" className="form-control" id="apellidoMaternoEstudiante" placeholder="Apellido materno del estudiante" value={formValues.apellidoMaternoEstudiante} onChange={handleInputChange} />
                 </div>
               </div>
               <div className="row">
                 <div className="col-md-4 mb-3">
-                  <label htmlFor="crearEstudianteDto.persona.dni" className="form-label">DNI</label>
-                  <input type="text" className="form-control" id="crearEstudianteDto.persona.dni" placeholder="DNI del estudiante" value={formValues.crearEstudianteDto.persona.dni} onChange={handleInputChange} />
+                  <label htmlFor="dniEstudiante" className="form-label">DNI</label>
+                  <input type="text" className="form-control" id="dniEstudiante" placeholder="DNI del estudiante" value={formValues.dniEstudiante} onChange={handleInputChange} />
                 </div>
                 <div className="col-md-4 mb-3">
-                  <label htmlFor="crearEstudianteDto.persona.fechaNacimiento" className="form-label">Fecha de Nacimiento</label>
-                  <input type="date" className="form-control" id="crearEstudianteDto.persona.fechaNacimiento" value={formValues.crearEstudianteDto.persona.fechaNacimiento} onChange={handleInputChange} />
+                  <label htmlFor="fechaNacimientoEstudiante" className="form-label">Fecha de Nacimiento</label>
+                  <input type="date" className="form-control" id="fechaNacimientoEstudiante" value={formValues.fechaNacimientoEstudiante} onChange={handleInputChange} />
                 </div>
                 <div className="col-md-4 mb-3">
-                  <label htmlFor="crearEstudianteDto.persona.numeroCelular" className="form-label">Teléfono</label>
-                  <input type="tel" className="form-control" id="crearEstudianteDto.persona.numeroCelular" placeholder="Teléfono del estudiante" value={formValues.crearEstudianteDto.persona.numeroCelular} onChange={handleInputChange} />
+                  <label htmlFor="numeroCelularEstudiante" className="form-label">Teléfono</label>
+                  <input type="tel" className="form-control" id="numeroCelularEstudiante" placeholder="Teléfono del estudiante" value={formValues.numeroCelularEstudiante} onChange={handleInputChange} />
                 </div>
               </div>
               <div className="row">
                 <div className="col-md-6 mb-3">
-                  <label htmlFor="crearEstudianteDto.sexo" className="form-label">Sexo</label>
-                  <select className="form-select" id="crearEstudianteDto.sexo" value={formValues.crearEstudianteDto.sexo} onChange={handleInputChange}>
+                  <label htmlFor="sexoEstudiante" className="form-label">Sexo</label>
+                  <select className="form-select" id="sexoEstudiante" value={formValues.sexoEstudiante} onChange={handleInputChange}>
                     <option value="">Selecciona un sexo</option>
                     <option value="Masculino">Masculino</option>
                     <option value="Femenino">Femenino</option>
                   </select>
                 </div>
                 <div className="col-md-6 mb-3">
-                  <label htmlFor="crearEstudianteDto.edad" className="form-label">Edad</label>
-                  <input type="number" className="form-control" id="crearEstudianteDto.edad" placeholder="Edad del estudiante" value={formValues.crearEstudianteDto.edad} onChange={handleInputChange} />
+                  <label htmlFor="edadEstudiante" className="form-label">Edad</label>
+                  <input type="number" className="form-control" id="edadEstudiante" placeholder="Edad del estudiante" value={formValues.edadEstudiante} onChange={handleInputChange} />
                 </div>
               </div>
               <div className="mb-3">
@@ -155,47 +139,47 @@ export default function Matricula() {
             <div className="col-md-6">
               <h2>Contacto del Apoderado</h2>
               <div className="mb-3">
-                <label htmlFor="apoderadoDto.nombre" className="form-label">Nombre</label>
-                <input type="text" className="form-control" id="apoderadoDto.nombre" placeholder="Nombre del apoderado" value={formValues.apoderadoDto.nombre} onChange={handleInputChange} />
+                <label htmlFor="nombreApoderado" className="form-label">Nombre</label>
+                <input type="text" className="form-control" id="nombreApoderado" placeholder="Nombre del apoderado" value={formValues.nombreApoderado} onChange={handleInputChange} />
               </div>
 
               <div className="row">
                 <div className="col-md-6 mb-3">
-                  <label htmlFor="apoderadoDto.apellidoPaterno" className="form-label">Apellido Paterno</label>
-                  <input type="text" className="form-control" id="apoderadoDto.apellidoPaterno" placeholder="Apellido paterno del apoderado" value={formValues.apoderadoDto.apellidoPaterno} onChange={handleInputChange} />
+                  <label htmlFor="apellidoPaternoApoderado" className="form-label">Apellido Paterno</label>
+                  <input type="text" className="form-control" id="apellidoPaternoApoderado" placeholder="Apellido paterno del apoderado" value={formValues.apellidoPaternoApoderado} onChange={handleInputChange} />
                 </div>
                 <div className="col-md-6 mb-3">
-                  <label htmlFor="apoderadoDto.apellidoMaterno" className="form-label">Apellido Materno</label>
-                  <input type="text" className="form-control" id="apoderadoDto.apellidoMaterno" placeholder="Apellido materno del apoderado" value={formValues.apoderadoDto.apellidoMaterno} onChange={handleInputChange} />
+                  <label htmlFor="apellidoMaternoApoderado" className="form-label">Apellido Materno</label>
+                  <input type="text" className="form-control" id="apellidoMaternoApoderado" placeholder="Apellido materno del apoderado" value={formValues.apellidoMaternoApoderado} onChange={handleInputChange} />
                 </div>
               </div>
 
               <div className="row">
                 <div className="col-md-4 mb-3">
-                  <label htmlFor="apoderadoDto.dni" className="form-label">DNI</label>
-                  <input type="text" className="form-control" id="apoderadoDto.dni" placeholder="DNI del apoderado" value={formValues.apoderadoDto.dni} onChange={handleInputChange} />
+                  <label htmlFor="dniApoderado" className="form-label">DNI</label>
+                  <input type="text" className="form-control" id="dniApoderado" placeholder="DNI del apoderado" value={formValues.dniApoderado} onChange={handleInputChange} />
                 </div>
                 <div className="col-md-4 mb-3">
-                  <label htmlFor="apoderadoDto.fechaNacimiento" className="form-label">Fecha de Nacimiento</label>
-                  <input type="date" className="form-control" id="apoderadoDto.fechaNacimiento" value={formValues.apoderadoDto.fechaNacimiento} onChange={handleInputChange} />
+                  <label htmlFor="fechaNacimientoApoderado" className="form-label">Fecha de Nacimiento</label>
+                  <input type="date" className="form-control" id="fechaNacimientoApoderado" value={formValues.fechaNacimientoApoderado} onChange={handleInputChange} />
                 </div>
                 <div className="col-md-4 mb-3">
-                  <label htmlFor="apoderadoDto.numeroCelular" className="form-label">Teléfono</label>
-                  <input type="tel" className="form-control" id="apoderadoDto.numeroCelular" placeholder="Teléfono del apoderado" value={formValues.apoderadoDto.numeroCelular} onChange={handleInputChange} />
+                  <label htmlFor="numeroCelularApoderado" className="form-label">Teléfono</label>
+                  <input type="tel" className="form-control" id="numeroCelularApoderado" placeholder="Teléfono del apoderado" value={formValues.numeroCelularApoderado} onChange={handleInputChange} />
                 </div>
               </div>
 
               <div className="mb-3">
-                <label htmlFor="documentoCrearDto.urlConstancia" className="form-label">Adjuntar Constancia</label>
-                <input type="file" className="form-control" id="documentoCrearDto.urlConstancia" onChange={handleFileChange} />
+                <label htmlFor="urlConstancia" className="form-label">Adjuntar Constancia</label>
+                <input type="file" className="form-control" id="urlConstancia" onChange={handleFileChange} />
               </div>
               <div className="mb-3">
-                <label htmlFor="documentoCrearDto.urlLibreta" className="form-label">Adjuntar Boleta de Notas</label>
-                <input type="file" className="form-control" id="documentoCrearDto.urlLibreta" onChange={handleFileChange} />
+                <label htmlFor="urlLibreta" className="form-label">Adjuntar Boleta de Notas</label>
+                <input type="file" className="form-control" id="urlLibreta" onChange={handleFileChange} />
               </div>
               <div className="mb-3">
-                <label htmlFor="documentoCrearDto.urlCopiaDni" className="form-label">Adjuntar Copia de DNI</label>
-                <input type="file" className="form-control" id="documentoCrearDto.urlCopiaDni" onChange={handleFileChange} />
+                <label htmlFor="urlCopiaDni" className="form-label">Adjuntar Copia de DNI</label>
+                <input type="file" className="form-control" id="urlCopiaDni" onChange={handleFileChange} />
               </div>
               <div className="d-grid gap-2 mt-4">
                 <button className="btn btn-primary" type="button" onClick={handleSubmit}>Enviar</button>
